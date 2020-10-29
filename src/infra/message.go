@@ -32,6 +32,6 @@ func (messageRepo *MessageRepository) FindAll() (messages []*model.Message, err 
 }
 
 func (messageRepos *MessageRepository) Create(message *model.Message) (*model.Message, error) {
-	_, err := messageRepos.SqlHandler.Conn.Exec("INSERT INTO messages (body, created_at) VALUES (?, ?)", message.Body, message.CreatedAt)
+	_, err := messageRepos.SqlHandler.Conn.Exec("INSERT INTO messages (body) VALUES (?)", message.Body)
 	return message, err
 }
