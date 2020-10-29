@@ -1,0 +1,13 @@
+FROM golang:1.14
+
+RUN mkdir /app
+WORKDIR /app
+
+ENV GO111MODULE=on
+
+# RUN go get github.com/pilu/fresh
+
+EXPOSE 8080
+
+# CMD ["fresh"]
+CMD ["go", "run", "src/main.go"]
