@@ -8,6 +8,8 @@ services:
         - ./:/app
       ports:
         - "8080:8080"
+      depends_on:
+        - mysql
       tty: true
       stdin_open: true
       environment:
